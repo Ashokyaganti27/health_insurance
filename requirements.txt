@@ -3,3 +3,10 @@ pandas
 numpy
 notebook
 pyYAML
+python-box
+ensure
+tqdm
+joblib
+types-pyYAML
+Flask
+Flask-cors
