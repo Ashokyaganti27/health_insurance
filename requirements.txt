@@ -10,3 +10,4 @@ joblib
 types-pyYAML
 Flask
 Flask-cors
+kaggle

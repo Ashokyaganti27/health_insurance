@@ -20,6 +20,9 @@ def read_yaml(file_path) ->ConfigBox:
             # loading yaml
             file=yaml.safe_load(yaml_file)
 
+            if file is None:
+                file={}
+
             # configbox for working with dictionary data in easy and clean way like file.name unlike file[name]
             return ConfigBox(file)
     except FileNotFoundError:
