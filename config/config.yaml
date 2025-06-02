@@ -5,3 +5,13 @@ data_ingestion:
     root_dir: artifacts/data/raw
     dataset_name: "anmolkumar/health-insurance-cross-sell-prediction"
     file_path_zip: artifacts/data/raw/dataset.zip
+
+data_validation:
+    root_dir: artifacts/data_validation
+    STATUS_FILE: artifacts/data_validation/status.txt
+    test_data_path: artifacts/data/raw/test.csv
+
+data_transformation:
+    root_dir: artifacts/data/processed
+    test: artifacts/data/raw/test.csv
+    train: artifacts/data/raw/train.csv

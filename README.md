@@ -6,25 +6,26 @@ This project aims to build a machine learning pipeline to predict whether a cust
 
 ## ✅ Current Progress
 
-As of now, I’ve completed the **Data ingestion Pipeline**:
+**Data ingestion Pipeline completed** 
 
 - Connected securely to **Kaggle API** for dataset access.
 - Automated the **data download and storage process** using a Python script.
 - Implemented **basic exception handling and logging** for traceability.
 - Stored the raw dataset under a dedicated versioned path: `artifacts/data/raw/`.
 
-## 🛠️ Tools Used So Far
+**Data validation Pipeline completed** 
 
----
+## **Key Checks Performed**
 
-- Python 3.10+
-- OS, Pathlib, Logging
-- Kaggle API
-- Pandas
-- numpy
-- seaborn
+- Validated column names match the expected schema.
 
----
+- Ensured column order is consistent with training schema.
+
+- Verified data types of each column (e.g., int64, object, etc.).
+
+- Checked both train and test datasets.
+
+- Gives True if Success Otherwise False.
 
 ## 📂 Data Source
 
