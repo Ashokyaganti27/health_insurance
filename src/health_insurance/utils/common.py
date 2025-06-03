@@ -63,8 +63,8 @@ def load_json(path:Path)-> ConfigBox:
     return ConfigBox(data)
 
 # function for saving model using joblib
-@ensure_annotations
-def save_model(data:Any, path:Path):
+
+def save_model(data, path:Path)->None:
 
     # saving model
 

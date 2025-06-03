@@ -1,3 +1,4 @@
 venev/
 .kaggle/
-artifacts/data/raw
+artifacts/data/
+artifacts/model_trainer/

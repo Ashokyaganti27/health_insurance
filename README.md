@@ -13,7 +13,7 @@ This project aims to build a machine learning pipeline to predict whether a cust
 - Implemented **basic exception handling and logging** for traceability.
 - Stored the raw dataset under a dedicated versioned path: `artifacts/data/raw/`.
 
-**Data validation Pipeline completed** 
+## **Data validation Pipeline completed**
 
 ## **Key Checks Performed**
 

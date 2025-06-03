@@ -4,6 +4,7 @@ from src.health_insurance.utils.common import read_yaml,create_directories
 from src.health_insurance.entity.config_entity import DataIngestonConfig
 from src.health_insurance.entity.config_entity import DataValidationConfig
 from src.health_insurance.entity.config_entity import DataTransformationConfig
+from src.health_insurance.entity.config_entity import ModelTrainerConfig
 class ConfigurationManager:
     def __init__(self,config_fil=CONFIG_FILE_PATH,
                  params_file=PARAMS_FILE_PATH,
@@ -43,14 +44,33 @@ class ConfigurationManager:
         return data_validation_config
     
     def get_data_transformation_config(self)->DataTransformationConfig:
-        config=self.config
+        config=self.config.data_transformation
 
         create_directories([config.root_dir])
 
         data_transfomation_config=DataTransformationConfig(
             root_dir=config.root_dir,
             train=config.train,
-            test=config.test
+            test=config.test,
+            scaling=config.scaling
         )
         
         return data_transfomation_config
+    
+    def get_model_trainer_config(self)->ModelTrainerConfig:
+
+        config=self.config.model_trainer
+        params=self.params.Decision_tree
+        
+        create_directories([config.root_dir])
+
+        model_trainer_config=ModelTrainerConfig(
+            root_dir=config.root_dir,
+            train_path=config.train_path,
+            model_name=config.model_name,
+            max_depth=params.max_depth,
+            min_samples_leaf=params.min_samples_leaf,
+            min_samples_split=params.min_samples_split
+        )
+
+        return model_trainer_config

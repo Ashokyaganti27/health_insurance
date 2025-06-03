@@ -19,3 +19,13 @@ class DataTransformationConfig:
     root_dir: Path
     test: Path
     train: Path
+    scaling: bool
+
+@dataclass
+class ModelTrainerConfig:
+    root_dir: Path
+    train_path: Path
+    model_name: str
+    max_depth: 5
+    min_samples_split: 4
+    min_samples_leaf: 3
