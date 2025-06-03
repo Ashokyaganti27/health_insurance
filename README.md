@@ -6,16 +6,16 @@ This project aims to build a machine learning pipeline to predict whether a cust
 
 ## ✅ Current Progress
 
-**Data ingestion Pipeline completed** 
+## Data ingestion Pipeline completed
 
-- Connected securely to **Kaggle API** for dataset access.
-- Automated the **data download and storage process** using a Python script.
-- Implemented **basic exception handling and logging** for traceability.
+- Connected securely to Kaggle API for dataset access.
+- Automated the data download and storage process using a Python script.
+- Implemented basic exception handling and logging for traceability.
 - Stored the raw dataset under a dedicated versioned path: `artifacts/data/raw/`.
 
-## **Data validation Pipeline completed**
+## Data validation Pipeline completed
 
-## **Key Checks Performed**
+## Key Checks Performed
 
 - Validated column names match the expected schema.
 
@@ -26,6 +26,22 @@ This project aims to build a machine learning pipeline to predict whether a cust
 - Checked both train and test datasets.
 
 - Gives True if Success Otherwise False.
+
+## Data Transformation Pipeline Completed
+
+- Encoded categorical variables like Gender, Vehicle_Damage, Vehicle_Age.
+
+- Applied StandardScaler to numeric features for better model behavior.
+
+- Maintained original feature structure after transformation.
+
+- Saved clean, processed train and test datasets under artifacts/data/processed/.
+
+## Mdodel Training Pipeline Completed
+
+- Trained  decision Tree classifier model on Train data
+
+- Dumped model into artifacts/model_trainer/model.joblib using joblib
 
 ## 📂 Data Source
 
