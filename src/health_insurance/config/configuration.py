@@ -5,6 +5,7 @@ from src.health_insurance.entity.config_entity import DataIngestonConfig
 from src.health_insurance.entity.config_entity import DataValidationConfig
 from src.health_insurance.entity.config_entity import DataTransformationConfig
 from src.health_insurance.entity.config_entity import ModelTrainerConfig
+from src.health_insurance.entity.config_entity import ModelEvaluationConfig
 class ConfigurationManager:
     def __init__(self,config_fil=CONFIG_FILE_PATH,
                  params_file=PARAMS_FILE_PATH,
@@ -74,3 +75,23 @@ class ConfigurationManager:
         )
 
         return model_trainer_config
+    
+    def get_model_evaluation_config(self)->ModelEvaluationConfig:
+
+        config=self.config.model_evaluation
+        schema=self.schema_file.target_column
+        params=self.params.Decision_tree
+
+        create_directories([config.root_dir])
+
+        data_model_evaluation_config=ModelEvaluationConfig(
+            root_dir=config.root_dir,
+            test_data_path=config.test_data_path,
+            model_file_name=config.metrics_file_name,
+            model_path=config.model_path,
+            target_columns=schema.target,
+            mlflow_uri="https://dagshub.com/YagantiAshok177/health_insurance.mlflow",
+            params=params
+
+        )
+        return data_model_evaluation_config

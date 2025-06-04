@@ -72,7 +72,7 @@ def save_model(data, path:Path)->None:
     logger.info(f"model successfully saved at {path}")
 
 # function for loding model
-def load_model(path:Path) ->Any:
+def load_model(path:Path):
 
     # loading model
     data=joblib.load(path)

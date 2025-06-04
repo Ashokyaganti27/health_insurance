@@ -11,3 +11,6 @@ columns:
     Annual_Premium: float
     Policy_Sales_Channel: float
     Vintage: int
+
+target_column:
+    target: Response

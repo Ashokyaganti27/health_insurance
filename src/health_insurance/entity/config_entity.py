@@ -29,3 +29,13 @@ class ModelTrainerConfig:
     max_depth: 5
     min_samples_split: 4
     min_samples_leaf: 3
+
+@dataclass
+class ModelEvaluationConfig:
+    root_dir: Path
+    test_data_path: Path
+    model_path: Path
+    model_file_name: Path
+    target_columns: str
+    mlflow_uri: str
+    params:dict

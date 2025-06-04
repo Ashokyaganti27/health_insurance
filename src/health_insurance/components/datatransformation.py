@@ -3,6 +3,7 @@ import pandas as pd
 from sklearn.preprocessing import StandardScaler
 from src.health_insurance.entity.config_entity import DataTransformationConfig
 import os
+import numpy as np
 
 class Datatransformation:
     def __init__(self,config:DataTransformationConfig):
@@ -51,6 +52,15 @@ class Datatransformation:
 
         # scaling only for distance based models not tress based models
         # so if self.config is trus we transform otherwise not 
+
+
+        # here tset data has no target variable to check the accuracy so i decided to add that column by using random variables
+        np.random.seed(42)  # for reproducibility
+        random_y = np.random.randint(0, 2, size=len(test))  # Binary: 0 or 1
+
+        # Add to test dataframe
+        test["Response"] = random_y
+
 
         if self.config:
             scaling_features=["Age","Region_Code","Annual_Premium","Policy_Sales_Channel","Vintage"]
